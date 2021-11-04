@@ -83,15 +83,19 @@ class numberParser:
         else:
             self.__isError = True
 
+def inputPrompt():
+    print('Please enter string for validation: ', end='')
+    inputStr = input()
+    return inputStr
 
 def main():
-    inputString = input()
+    inputString = inputPrompt()
 
     while inputString != 'exit':
         # Parser segment
         parser = numberParser(inputString)
         print('String is ACCEPTED.\n' if parser.starter() else 'String is NOT ACCEPTED.\n')
 
-        inputString = input()
+        inputString = inputPrompt()
 
 main()
