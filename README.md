@@ -1,5 +1,8 @@
 # cmsc124_mp3
  Lexical/Syntax Analysis
 
- Chico, Melzar Jan  
- CMSC124 B
+ NAME: Chico, Melzar Jan  
+ COURSE & SECTION: CMSC124 B  
+ DATE: 8 November 2021  
+
+ ABOUT: Implement a recursive descent parser
