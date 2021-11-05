@@ -1,4 +1,4 @@
 language = "python3"
 
-# type the file below inside the quotation marks that you want to run (in the run button)
-run = "python chico_mp3_one.py"
+# type the file below on the brackets (brackets not included) that you want to run (in the run button)
+run = "python [chosenfileherenobrackers].py"
