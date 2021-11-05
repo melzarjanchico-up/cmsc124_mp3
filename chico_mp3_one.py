@@ -93,7 +93,7 @@ class arithmeticParser:
             self.__isError = True
 
 def inputPrompt():
-    print('Please enter string for validation: ', end='')
+    print('(MP3 #1) Enter string: ', end='')
     inputStr = input()
     return inputStr
 
