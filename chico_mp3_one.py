@@ -37,7 +37,7 @@ class arithmeticParser:
     def match(self, char):
         return self.__currChar == char
 
-    def starter(self):
+    def start(self):
         self.expression()
 
         # Checks if the parser read the string entirely
@@ -103,7 +103,7 @@ def main():
     while inputString != 'exit':
         # Parser segment
         parser = arithmeticParser(inputString)
-        print('String is ACCEPTED.\n' if parser.starter() else 'String is NOT ACCEPTED.\n')
+        print('String is ACCEPTED.\n' if parser.start() else 'String is NOT ACCEPTED.\n')
 
         inputString = inputPrompt()
 
