@@ -1,13 +1,13 @@
 """
-    FILE:       chico_mp3_numberone.py
-    ABOUT:      Implements a recursive-descent (predictive) parser for a given grammar.
+    FILE:       chico_mp3_one.py
+    ABOUT:      A class that that does recursing parsing for the first grammar in the MP3
 
     NAME:       Melzar Jan E. Chico
     COURSE:     CMSC124 B
     DATE:       8 Novemeber 2021
     TASK:       Machine Problem 3 - Lexical and Syntax Analysis (No. 1)
 
-    NOTICE:     The grammar was modified to remove left recursion/pair disjointedness.
+    NOTICE:     The grammar was modified in accordance "that I see fit that it accepts correct inputs"
                 Here's the final grammar:
                     <expr> ::= <term><expr'>
                     <expr'> ::= +<term><expr'> | -<term><expr'> | e
@@ -17,7 +17,7 @@
                     <digit> ::= 0 | 1 | 2 | 3
 """
 
-class arithmeticParser:
+class ArithmeticParser:
     def __init__(self, strLine) -> None:
         self.__strLine = strLine
         self.__currChar = None
@@ -91,20 +91,3 @@ class arithmeticParser:
             self.nextChar()
         else:
             self.__isError = True
-
-def inputPrompt():
-    print('(MP3 #1) Enter string: ', end='')
-    inputStr = input()
-    return inputStr
-
-def main():
-    inputString = inputPrompt()
-
-    while inputString != 'exit':
-        # Parser segment
-        parser = arithmeticParser(inputString)
-        print('String is ACCEPTED.\n' if parser.start() else 'String is NOT ACCEPTED.\n')
-
-        inputString = inputPrompt()
-
-main()

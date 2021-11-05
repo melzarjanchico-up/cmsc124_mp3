@@ -1,13 +1,13 @@
 """
-    FILE:       chico_mp3_numbertwo.py
-    ABOUT:      Implements a recursive-descent (predictive) parser for a given grammar.
+    FILE:       chico_mp3_two.py
+    ABOUT:      A class that that does recursing parsing for the second grammar in the MP3
 
     NAME:       Melzar Jan E. Chico
     COURSE:     CMSC124 B
     DATE:       8 Novemeber 2021
     TASK:       Machine Problem 3 - Lexical and Syntax Analysis (No. 2)
 
-    NOTICE:     The grammar was modified in accordance "to I see fit that it accepts correct inputs"
+    NOTICE:     The grammar was modified in accordance "that I see fit that it accepts correct inputs"
                 Here's the final grammar:
                     <integer> ::= [+|-] <num>
                     <num> ::= <digit><num'>
@@ -17,7 +17,7 @@
                     <digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
 """
 
-class numberParser:
+class NumberParser:
     def __init__(self, strLine) -> None:
         self.__strLine = strLine
         self.__currChar = None
@@ -47,6 +47,7 @@ class numberParser:
         return (True if not self.__isError else False)
 
     ##### PROCEDURES IN THE GRAMMAR RULES BELOW #####
+
     def integer(self):
         if self.match('+') or self.match('-'):
             self.nextChar()
@@ -82,20 +83,3 @@ class numberParser:
             self.nextChar()
         else:
             self.__isError = True
-
-def inputPrompt():
-    print('(MP3 #2) Enter string: ', end='')
-    inputStr = input()
-    return inputStr
-
-def main():
-    inputString = inputPrompt()
-
-    while inputString != 'exit':
-        # Parser segment
-        parser = numberParser(inputString)
-        print('String is ACCEPTED.\n' if parser.start() else 'String is NOT ACCEPTED.\n')
-
-        inputString = inputPrompt()
-
-main()
